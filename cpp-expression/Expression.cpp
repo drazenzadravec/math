@@ -1,5 +1,5 @@
 /* Company :       Nequeo Pty Ltd, http://www.dznequeo.net/
-*  Copyright :     Copyright © Nequeo Pty Ltd 2017 http://www.dznequeo.net/
+*  Copyright :     Copyright Â© Nequeo Pty Ltd http://www.dznequeo.net/
 *
 *  File :          Expression.cpp
 *  Purpose :       Expression class.
