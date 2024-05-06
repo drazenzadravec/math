@@ -1,0 +1,33 @@
+{
+    "name": "math-expression-nequeo",
+    "version": "4.2.7",
+    "description": "Math expression evaluator",
+    "main": "index.mjs",
+    "scripts": {
+        "build": "tsc --build",
+        "clean": "tsc --build --clean"
+    },
+    "repository": {
+		"type": "git",
+		"url": "https://github.com/nequeo/resource/tree/master/math-expression-nequeo"
+	},
+	"keywords": [
+		"math", "javascript", "typescript", "expression", "nodejs", "lambda"
+	],
+	"author": "Drazen Zadravec",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/nequeo/resource/issues"
+	},
+	"homepage": "https://github.com/nequeo/resource/tree/master/math-expression-nequeo",
+    "devDependencies": {
+        "@types/node": "^20.10.5",
+        "@typescript-eslint/eslint-plugin": "^6.16.0",
+        "@typescript-eslint/parser": "^6.16.0",
+        "eslint": "^8.56.0",
+        "typescript": "^5.3.3"
+    },
+    "dependencies": {
+        "mathjs": "^12.2.1"
+    }
+}
