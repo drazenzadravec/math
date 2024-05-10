@@ -17,14 +17,14 @@ npm run build
 
 #### Calculator Functions
 
-![Alt text](https://nequeo-public.s3.ap-southeast-2.amazonaws.com/media/mathjs-calculator-functions.png "Calculator Functions")
+[![Calculator Functions](https://nequeo-public.s3.ap-southeast-2.amazonaws.com/media/mathjs-calculator-functions.png)](https://www.dznequeo.net/awsapi/site/calculator/)
 
 
 #### Calculator Statistics
 
-![Alt text](https://nequeo-public.s3.ap-southeast-2.amazonaws.com/media/mathjs-calculator-statistics.png "Calculator Statistics")
+[![Calculator Statistics](https://nequeo-public.s3.ap-southeast-2.amazonaws.com/media/mathjs-calculator-statistics.png)](https://www.dznequeo.net/awsapi/site/calculator/)
 
 
 #### Calculator Trigonometry
 
-![Alt text](https://nequeo-public.s3.ap-southeast-2.amazonaws.com/media/mathjs-calculator-trigonometry.png "Calculator Trigonometry")
+[![Calculator Trigonometry](https://nequeo-public.s3.ap-southeast-2.amazonaws.com/media/mathjs-calculator-trigonometry.png)](https://www.dznequeo.net/awsapi/site/calculator/)
