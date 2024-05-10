@@ -12,6 +12,9 @@ npm install
 ## Build
 npm run build 
 
+
+## Image
+
 #### Calculator Functions
 
 ![Alt text](https://nequeo-public.s3.ap-southeast-2.amazonaws.com/media/mathjs-calculator-functions.png "Calculator Functions")
