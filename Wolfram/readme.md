@@ -18,4 +18,4 @@
 
 ![Alt text](https://nequeo-public.s3.ap-southeast-2.amazonaws.com/media/wolfram-calculator-trigonometry-series.png "Expression Trigonometry Series")
 
-[![App Platorm](https://nequeo-public.s3.ap-southeast-2.amazonaws.com/media/wolfram-calculator-trigonometry-series.png)]("Expression Trigonometry Series")
+[![App Platorm](https://nequeo-public.s3.ap-southeast-2.amazonaws.com/media/wolfram-calculator-trigonometry-series.png)](https://www.digitalocean.com/products/app-platform)
