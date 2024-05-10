@@ -1,0 +1,395 @@
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+    text-decoration: none;
+    background-color: transparent;
+}
+
+a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.text-dark {
+    color: #343a40 !important;
+}
+
+a.text-dark:hover, a.text-dark:focus {
+    color: #121416 !important;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    font-size: 14px;
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px; /* Vertically center the text there */
+}
+
+/* Set gray background color and 100% height */
+.sidenav {
+    border-radius: 6px;
+    margin: 0px 15px 10px 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #eee;
+    height: 100%;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    color: white !important;
+    border: 1px solid #e2e2e2 !important;
+    background-color: #e2e2e2 !important;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e2e2e2), color-stop(100%, #e2e2e2)) !important;
+    background: -webkit-linear-gradient(top, #e2e2e2 0%, #e2e2e2 100%) !important;
+    background: -moz-linear-gradient(top, #e2e2e2 0%, #e2e2e2 100%) !important;
+    background: -ms-linear-gradient(top, #e2e2e2 0%, #e2e2e2 100%) !important;
+    background: -o-linear-gradient(top, #e2e2e2 0%, #e2e2e2 100%) !important;
+    background: linear-gradient(to bottom, #e2e2e2 0%, #e2e2e2 100%) !important;
+}
+
+.card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+    margin-right: 20px;
+    margin-left: 20px;
+    height: 100%;
+}
+
+    .card > hr {
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .card > .list-group:first-child .list-group-item:first-child {
+        border-top-left-radius: 0.25rem;
+        border-top-right-radius: 0.25rem;
+    }
+
+    .card > .list-group:last-child .list-group-item:last-child {
+        border-bottom-right-radius: 0.25rem;
+        border-bottom-left-radius: 0.25rem;
+    }
+
+.card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+
+.card-title {
+    margin-bottom: 0.75rem;
+}
+
+.card-subtitle {
+    margin-top: -0.375rem;
+    margin-bottom: 0;
+}
+
+.card-header {
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: rgba(0, 0, 0, 0.03);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+    .card-header:first-child {
+        border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
+    }
+
+    .card-header + .list-group .list-group-item:first-child {
+        border-top: 0;
+    }
+
+.card-footer {
+    padding: 0.75rem 1.25rem;
+    background-color: rgba(0, 0, 0, 0.03);
+    border-top: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+    .card-footer:last-child {
+        border-radius: 0 0 calc(0.25rem - 1px) calc(0.25rem - 1px);
+    }
+
+.card-header-tabs {
+    margin-right: -0.625rem;
+    margin-bottom: -0.75rem;
+    margin-left: -0.625rem;
+    border-bottom: 0;
+}
+
+.card-header-pills {
+    margin-right: -0.625rem;
+    margin-left: -0.625rem;
+}
+
+.card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+
+.card-deck .card {
+    margin-bottom: 15px;
+}
+
+.grid-home-page-container {
+    height: 100%;
+    padding: 1px 1px 1px 1px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.grid-home-page-group {
+    height: 100%;
+    display: grid;
+    padding: 1px 1px 1px 1px;
+    grid-gap: 5px;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto;
+}
+
+.grid-home-page-container-4 {
+    height: 100%;
+    padding: 1px 1px 1px 1px;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+
+.grid-home-page-group-4 {
+    height: 100%;
+    display: grid;
+    padding: 1px 1px 1px 1px;
+    grid-gap: 5px;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto;
+}
+
+.grid-home-page-container-2 {
+    height: 100%;
+    padding: 1px 1px 1px 1px;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.grid-home-page-group-2 {
+    height: 100%;
+    display: grid;
+    padding: 1px 1px 1px 1px;
+    grid-gap: 5px;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+}
+
+.grid-home-page-container-1 {
+    height: 100%;
+    padding: 1px 1px 1px 1px;
+    display: grid;
+    grid-template-columns: auto;
+}
+
+.grid-home-page-group-1 {
+    height: 100%;
+    display: grid;
+    padding: 1px 1px 1px 1px;
+    grid-gap: 5px;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+}
+
+.col-extend {
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    width: auto;
+    height: 100%;
+    max-width: 100%;
+    padding: 0px 0px 10px 0px
+}
+
+.operation-result-success {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background-color: #e3f6e5;
+}
+
+.operation-result-fail {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background-color: #f2e0e0;
+}
+
+.text-field-normal {
+    width: 400px;
+}
+
+@media screen and (max-width: 1000px) {
+    html {
+        font-size: 16px;
+    }
+
+    .grid-home-page-container {
+        grid-template-columns: auto;
+    }
+
+    .grid-home-page-group {
+        grid-template-columns: auto auto;
+    }
+
+    .grid-home-page-container-4 {
+        grid-template-columns: auto;
+    }
+
+    .grid-home-page-group-4 {
+        grid-template-columns: auto auto;
+    }
+
+    .grid-home-page-container-2 {
+        grid-template-columns: auto;
+    }
+
+    .grid-home-page-group-2 {
+        grid-template-columns: auto auto;
+    }
+
+    .grid-home-page-container-1 {
+        grid-template-columns: auto;
+    }
+
+    .grid-home-page-group-1 {
+        grid-template-columns: auto auto;
+    }
+
+    .col-extend {
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+        width: auto;
+        max-width: 100%;
+    }
+
+    .text-field-normal {
+        width: 350px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    html {
+        font-size: 16px;
+    }
+
+    .grid-home-page-container {
+        grid-template-columns: auto;
+    }
+
+    .grid-home-page-group {
+        grid-template-columns: auto;
+    }
+
+    .grid-home-page-container-4 {
+        grid-template-columns: auto;
+    }
+
+    .grid-home-page-group-4 {
+        grid-template-columns: auto;
+    }
+
+    .grid-home-page-container-2 {
+        grid-template-columns: auto;
+    }
+
+    .grid-home-page-group-2 {
+        grid-template-columns: auto;
+    }
+
+    .grid-home-page-container-1 {
+        grid-template-columns: auto;
+    }
+
+    .grid-home-page-group-1 {
+        grid-template-columns: auto;
+    }
+
+    .col-extend {
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+        width: auto;
+        max-width: 100%;
+    }
+
+    .text-field-normal {
+        width: 350px;
+    }
+}
