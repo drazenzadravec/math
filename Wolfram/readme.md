@@ -1,19 +1,19 @@
 ## Image
 
-#### Calculator Functions
+#### Expression Functions
 
-![Alt text](https://nequeo-public.s3.ap-southeast-2.amazonaws.com/media/wolfram-calculator-functions.png "Calculator Functions")
-
-
-#### Calculator Statistics
-
-![Alt text](https://nequeo-public.s3.ap-southeast-2.amazonaws.com/media/wolfram-calculator-statistics.png "Calculator Statistics")
+![Alt text](https://nequeo-public.s3.ap-southeast-2.amazonaws.com/media/wolfram-calculator-functions.png "Expression Functions")
 
 
-#### Calculator Trigonometry
+#### Expression Statistics
 
-![Alt text](https://nequeo-public.s3.ap-southeast-2.amazonaws.com/media/wolfram-calculator-trigonometry.png "Calculator Trigonometry")
+![Alt text](https://nequeo-public.s3.ap-southeast-2.amazonaws.com/media/wolfram-calculator-statistics.png "Expression Statistics")
 
-#### Calculator Trigonometry Series
 
-![Alt text](https://nequeo-public.s3.ap-southeast-2.amazonaws.com/media/wolfram-calculator-trigonometry-series.png "Calculator Trigonometry Series")
+#### Expression Trigonometry
+
+![Alt text](https://nequeo-public.s3.ap-southeast-2.amazonaws.com/media/wolfram-calculator-trigonometry.png "Expression Trigonometry")
+
+#### Expression Trigonometry Series
+
+![Alt text](https://nequeo-public.s3.ap-southeast-2.amazonaws.com/media/wolfram-calculator-trigonometry-series.png "Expression Trigonometry Series")
