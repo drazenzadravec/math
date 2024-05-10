@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/calculator.min.css" rel="stylesheet"  />
+</head>
+<body>
+    <div class="navbar-banner calculator-navbar-banner">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <button id="StandardMathId" class="calculator-button-layout">Standard</button>
+                        </li>
+                        <li class="nav-item">
+                            <button id="VariablesMathId" class="calculator-button-layout">Variables</button>
+                        </li>
+                        <li class="nav-item">
+                            <button id="CalculusMathId" class="calculator-button-layout">Calculus</button>
+                        </li>
+                        <li class="nav-item">
+                            <button id="TrigonometryMathId" class="calculator-button-layout">Trigonometry</button>
+                        </li>
+                        <li class="nav-item">
+                            <button id="StatisticsMathId" class="calculator-button-layout">Statistics</button>
+                        </li>
+                        <li class="nav-item">
+                            <button id="FunctionsMathId" class="calculator-button-layout">Functions</button>
+                        </li>
+                        <li class="nav-item">
+                            <button id="ProgrammingMathId" class="calculator-button-layout">Programming</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="container">
+        <main role="main" class="pb-3">
+            <input id="FunctionIndex" name="FunctionIndex" type="hidden" value />
+            <input id="SectionIndex" name="SectionIndex" type="hidden" value />
+
+            <button id="calculator_execute" type="submit" style="visibility:hidden; height:1px; width:1px;"></button>
+<pre id="OutputResult" class="calculator-result"></pre>
+<textarea cols="33" id="InputExpression" name="InputExpression" required="True" rows="3" style="resize:both;width:100%;">
+</textarea>
+            <div style="height:3px;"></div>
+
+            <div id="calculator_linear_algebra_div_id" class="calculator-function-item-init">
+                <div>
+                    <label class="calculator-label-functions" for="linear_algebra_label">Linear Algebra</label>
+                </div>
+                <div>
+                    <label class="calculator-label-functions" for="linear_algebra_label_1">Apply a System of Linear Equation Solver to the expression with multiple variables.</label>
+                </div>
+                <div class="grid-calculator-container-functions">
+                    <div>
+                        <label class="calculator-label-functions" for="LinAlgVariableNames">Variable Names</label>
+                        <input id="LinAlgVariableNames" name="LinAlgVariableNames" style="width:80%;" type="text" value />
+                    </div>
+                    <div>
+                        <label class="calculator-label-functions" for="ARowsColumns">A rows, columns</label>
+                        <input id="ARowsColumns" name="ARowsColumns" style="width:80%;" type="text" value />
+                    </div>
+                    <div>
+                        <label class="calculator-label-functions" for="BColumns">B columns</label>
+                        <input id="BColumns" name="BColumns" style="width:80%;" type="text" value />
+                    </div>
+                </div>
+            </div>
+            <div id="calculator_linear_regression_div_id" class="calculator-function-item-init">
+                <div>
+                    <label class="calculator-label-functions" for="linear_regression_label">Linear Regression</label>
+                </div>
+                <div>
+                    <label class="calculator-label-functions" for="linear_regression_label_1">Apply the Linear Regression on a set of points. Example: points [x, y] for y = a0*x^0 &#x2B; a1*x^1 &#x2B; a2*x^2 &#x2B; a3*x^3</label>
+                </div>
+                <div class="grid-calculator-container-functions">
+                    <div>
+                        <label class="calculator-label-functions" for="PolynomialDegree">Polynomial Degree</label>
+                        <input id="PolynomialDegree" name="PolynomialDegree" style="width:30%;" type="text" value />
+                    </div>
+                </div>
+            </div>
+            <div id="calculator_interpolation_div_id" class="calculator-function-item-init">
+                <div>
+                    <label class="calculator-label-functions" for="interpolation_label">Interpolation</label>
+                </div>
+                <div>
+                    <label class="calculator-label-functions" for="interpolation_label_1">Apply the Interpolation on a set of ordered points. Interpolation types</label>
+                </div>
+                <div class="grid-calculator-container-functions">
+                    <div>
+                        <label class="calculator-label-functions" for="InterpolateId">Interpolate</label>
+                        <select class="calculator-dropdown-functions" data-val="true" data-val-required="The InterpolateId field is required." id="InterpolateId" name="InterpolateId" style="width:70%;">
+                            <option selected="selected" value="0">Common</option>
+                            <option value="1">Rational Without Poles</option>
+                            <option value="2">Rational With Poles</option>
+                            <option value="3">Polynomial Equidistant</option>
+                            <option value="4">Polynomial</option>
+                            <option value="5">Linear</option>
+                            <option value="6">Log Linear</option>
+                            <option value="7">Cubic Spline</option>
+                            <option value="8">Cubic Spline Robust</option>
+                            <option value="9">Step</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="calculator-label-functions" for="InterpolateAt">Interpolate At</label>
+                        <input id="InterpolateAt" name="InterpolateAt" style="width:30%;" type="text" value />
+                    </div>
+                </div>
+            </div>
+            <div id="calculator_equation_root_div_id" class="calculator-function-item-init">
+                <div>
+                    <label class="calculator-label-functions" for="equation_root_label">Equation Root</label>
+                </div>
+                <div>
+                    <label class="calculator-label-functions" for="equation_root_label_1">f(x) = 0, Apply the Equation Root solver to the expressiom with a single variable &#x27;x&#x27;. Use &#x27;Lower Bound&#x27; and the &#x27;Upper Bound&#x27; to use initial guesses of the root for the expression at &#x27;x&#x27;.</label>
+                </div>
+                <div class="grid-calculator-container-functions">
+                    <div>
+                        <label class="calculator-label-functions" for="EquRootVariableNames">Variable Names</label>
+                        <input id="EquRootVariableNames" name="EquRootVariableNames" style="width:80%;" type="text" value />
+                    </div>
+                    <div>
+                        <label class="calculator-label-functions" for="EquRootVariableValues">Variable Values</label>
+                        <input id="EquRootVariableValues" name="EquRootVariableValues" style="width:80%;" type="text" value />
+                    </div>
+                    <div>
+                        <label class="calculator-label-functions" for="EquRootLowerBound">Lower Bound</label>
+                        <input id="EquRootLowerBound" name="EquRootLowerBound" style="width:80%;" type="text" value />
+                    </div>
+                    <div>
+                        <label class="calculator-label-functions" for="EquRootUpperBound">Upper Bound</label>
+                        <input id="EquRootUpperBound" name="EquRootUpperBound" style="width:80%;" type="text" value />
+                    </div>
+                </div>
+            </div>
+            <div id="calculator_quadratic_roots_div_id" class="calculator-function-item-init">
+                <div>
+                    <label class="calculator-label-functions" for="quadratic_roots_label">Quadratic Roots</label>
+                </div>
+                <div>
+                    <label class="calculator-label-functions" for="quadratic_roots_label_1">a*x^2 &#x2B; b*x &#x2B; c = 0, Apply the Quadratic Roots solver with a single variable &#x27;x&#x27;.</label>
+                </div>
+                <div class="grid-calculator-container-functions">
+                    <div>
+                        <label class="calculator-label-functions" for="QudRootVariableNames">Variable Names</label>
+                        <input id="QudRootVariableNames" name="QudRootVariableNames" style="width:60%;" type="text" value />
+                    </div>
+                    <div>
+                        <label class="calculator-label-functions" for="QudRootVariableValues">Variable Values</label>
+                        <input id="QudRootVariableValues" name="QudRootVariableValues" style="width:60%;" type="text" value />
+                    </div>
+                </div>
+            </div>
+            <div id="calculator_cubic_roots_div_id" class="calculator-function-item-init">
+                <div>
+                    <label class="calculator-label-functions" for="cubic_roots_label">Cubic Roots</label>
+                </div>
+                <div>
+                    <label class="calculator-label-functions" for="cubic_roots_label_1">a*x^3 &#x2B; b*x^2 &#x2B; c*x &#x2B; d = 0, Apply the Cubic Roots solver with a single variable &#x27;x&#x27;.</label>
+                </div>
+                <div class="grid-calculator-container-functions">
+                    <div>
+                        <label class="calculator-label-functions" for="CubicRootVariableNames">Variable Names</label>
+                        <input id="CubicRootVariableNames" name="CubicRootVariableNames" style="width:60%;" type="text" value />
+                    </div>
+                    <div>
+                        <label class="calculator-label-functions" for="CubicRootVariableValues">Variable Values</label>
+                        <input id="CubicRootVariableValues" name="CubicRootVariableValues" style="width:60%;" type="text" value />
+                    </div>
+                </div>
+            </div>
+            <div id="calculator_integrate_div_id" class="calculator-function-item-init">
+                <div>
+                    <label class="calculator-label-functions" for="integrate_label">Integrate</label>
+                </div>
+                <div>
+                    <label class="calculator-label-functions" for="integrate_label_1">Apply integration to the expression, with single variable &#x27;x&#x27;. Use &#x27;Lower Bound (a)&#x27; and the &#x27;Upper Bound (b)&#x27; interval [a, b].</label>
+                </div>
+                <div class="grid-calculator-container-functions">
+                    <div>
+                        <label class="calculator-label-functions" for="IntegrateVariableNames">Variable Names</label>
+                        <input id="IntegrateVariableNames" name="IntegrateVariableNames" style="width:80%;" type="text" value />
+                    </div>
+                    <div>
+                        <label class="calculator-label-functions" for="IntegrateVariableValues">Variable Values</label>
+                        <input id="IntegrateVariableValues" name="IntegrateVariableValues" style="width:80%;" type="text" value />
+                    </div>
+                    <div>
+                        <label class="calculator-label-functions" for="IntegrateLowerBound">Lower Bound</label>
+                        <input id="IntegrateLowerBound" name="IntegrateLowerBound" style="width:80%;" type="text" value />
+                    </div>
+                    <div>
+                        <label class="calculator-label-functions" for="IntegrateUpperBound">Upper Bound</label>
+                        <input id="IntegrateUpperBound" name="IntegrateUpperBound" style="width:80%;" type="text" value />
+                    </div>
+                </div>
+            </div>
+            <div id="calculator_derivative_div_id" class="calculator-function-item-init">
+                <div>
+                    <label class="calculator-label-functions" for="derivative_label">Differentiate</label>
+                </div>
+                <div>
+                    <label class="calculator-label-functions" for="derivative_label_1">Apply differentiation to the expression, with single variable &#x27;x&#x27;. Use &#x27;Variable (x)&#x27; to apply the value.</label>
+                </div>
+                <div class="grid-calculator-container-functions">
+                    <div>
+                        <label class="calculator-label-functions" for="DerivativeVariableNames">Variable Names</label>
+                        <input id="DerivativeVariableNames" name="DerivativeVariableNames" style="width:80%;" type="text" value />
+                    </div>
+                    <div>
+                        <label class="calculator-label-functions" for="DerivativeVariableValues">Variable Values</label>
+                        <input id="DerivativeVariableValues" name="DerivativeVariableValues" style="width:80%;" type="text" value />
+                    </div>
+                    <div>
+                        <label class="calculator-label-functions" for="DerivativeXVariableValue">Variable (x)</label>
+                        <input id="DerivativeXVariableValue" name="DerivativeXVariableValue" style="width:80%;" type="text" value />
+                    </div>
+                </div>
+            </div>
+            <div id="calculator_factorial_div_id" class="calculator-function-item-init">
+                <div>
+                    <label class="calculator-label-functions" for="factorial_label">Factorial</label>
+                </div>
+                <div>
+                    <label class="calculator-label-functions" for="factorial_label_1">Apply the Factorial on value &#x27;n&#x27;.</label>
+                </div>
+            </div>
+            <div id="calculator_permutation_div_id" class="calculator-function-item-init">
+                <div>
+                    <label class="calculator-label-functions" for="permutation_label">Permutation</label>
+                </div>
+                <div>
+                    <label class="calculator-label-functions" for="permutation_label_1">Number of (distinguishable) elements in the set &#x27;n&#x27; is [1, &#x221E;)</label>
+                </div>
+                <div>
+                    <label class="calculator-label-functions" for="permutation_label_2">Else number of elements in the set &#x27;n&#x27;, k-permutations of n</label>
+                </div>
+            </div>
+            <div id="calculator_variation_div_id" class="calculator-function-item-init">
+                <div>
+                    <label class="calculator-label-functions" for="variation_label">Variation</label>
+                </div>
+                <div>
+                    <label class="calculator-label-functions" for="variation_label_1">Count the number of possible variations without repetition. The order matters and each object can be chosen only once.</label>
+                </div>
+            </div>
+            <div id="calculator_binomial_div_id" class="calculator-function-item-init">
+                <div>
+                    <label class="calculator-label-functions" for="binomial_label">Binomial</label>
+                </div>
+                <div>
+                    <label class="calculator-label-functions" for="binomial_label_1">Apply the Binomial &#x27;n&#x27; choose &#x27;k&#x27;.</label>
+                </div>
+            </div>
+            <div id="calculator_combination_div_id" class="calculator-function-item-init">
+                <div>
+                    <label class="calculator-label-functions" for="combination_label">Combination</label>
+                </div>
+                <div>
+                    <label class="calculator-label-functions" for="combination_label_1">Apply the Combination &#x27;n&#x27; choose &#x27;k&#x27;.</label>
+                </div>
+            </div>
+            <div id="calculator_floor_div_id" class="calculator-function-item-init">
+                <div>
+                    <label class="calculator-label-functions" for="floor_label">Floor</label>
+                </div>
+                <div>
+                    <label class="calculator-label-functions" for="floor_label_1">Largest integer that is less than or equal to x.</label>
+                </div>
+            </div>
+            <div id="calculator_ceiling_div_id" class="calculator-function-item-init">
+                <div>
+                    <label class="calculator-label-functions" for="ceiling_label">Ceiling</label>
+                </div>
+                <div>
+                    <label class="calculator-label-functions" for="ceiling_label_1">Smallest integer that is greater than or equal to x.</label>
+                </div>
+            </div>
+            <div id="calculator_percent_div_id" class="calculator-function-item-init">
+                <div>
+                    <label class="calculator-label-functions" for="percent_label">Percentage</label>
+                </div>
+                <div>
+                    <label class="calculator-label-functions" for="percent_label_1">Calculate the percentage % of the input</label>
+                </div>
+            </div>
+            <div id="calculator_derivativeexact_div_id" class="calculator-function-item-init">
+                <div>
+                    <label class="calculator-label-functions" for="derivativeexact_label">Differentiate</label>
+                </div>
+                <div>
+                    <label class="calculator-label-functions" for="derivativeexact_label_">Find the exact derivative of a function</label>
+                </div>
+            </div>
+            <div id="calculator_integrateexact_div_id" class="calculator-function-item-init">
+                <div>
+                    <label class="calculator-label-functions" for="integrateexact_label">Integrate</label>
+                </div>
+                <div>
+                    <label class="calculator-label-functions" for="integrateexact_label_1">Find the exact integral of a function</label>
+                </div>
+            </div>
+            <div id="calculator_limit_div_id" class="calculator-function-item-init">
+                <div>
+                    <label class="calculator-label-functions" for="limit_label">Limit</label>
+                </div>
+                <div>
+                    <label class="calculator-label-functions" for="limit_label_1">Find the limit value that a function approaches as the input approaches some value</label>
+                </div>
+            </div>
+            <div id="calculator_limitneg_div_id" class="calculator-function-item-init">
+                <div>
+                    <label class="calculator-label-functions" for="limitneg_label">Limit-</label>
+                </div>
+                <div>
+                    <label class="calculator-label-functions" for="limitneg_label_1">Find the limit value that a function approaches as the input approaches some value</label>
+                </div>
+            </div>
+            <div id="calculator_limitpos_div_id" class="calculator-function-item-init">
+                <div>
+                    <label class="calculator-label-functions" for="limitpos_label">Limit&#x2B;</label>
+                </div>
+                <div>
+                    <label class="calculator-label-functions" for="limitpos_label_1">Find the limit value that a function approaches as the input approaches some value</label>
+                </div>
+            </div>
+            <div id="calculator_randomnumber_div_id" class="calculator-function-item-init">
+                <div>
+                    <label class="calculator-label-functions" for="randomnumber_label">Random Number</label>
+                </div>
+                <div>
+                    <label class="calculator-label-functions" for="randomnumber_label_1">Generate a random number, min to max in length: input: 34,56</label>
+                </div>
+            </div>
+            <div id="calculator_randompoint_div_id" class="calculator-function-item-init">
+                <div>
+                    <label class="calculator-label-functions" for="randompoint_label">Random Point</label>
+                </div>
+                <div>
+                    <label class="calculator-label-functions" for="randompoint_label_1">Generate random points, min to max in length and number of points: input: 34,56,6</label>
+                </div>
+            </div>
+
+            <!--</form>-->
+
+            <div id="calculator" class="grid-calculator-container">
+                <div class="grid-calculator-group">
+                    <div class="calculator-button-div calculator-button-div-background-color-numbers">
+                        <button id="calculator_7" class="calculator-button calculator-button-background-color-numbers">7</button>
+                    </div>
+                    <div class="calculator-button-div calculator-button-div-background-color-numbers">
+                        <button id="calculator_8" class="calculator-button calculator-button-background-color-numbers">8</button>
+                    </div>
+                    <div class="calculator-button-div calculator-button-div-background-color-numbers">
+                        <button id="calculator_9" class="calculator-button calculator-button-background-color-numbers">9</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_divide" class="calculator-button">&divide;</button>
+                    </div>
+                    <div class="calculator-button-div calculator-button-div-background-color-numbers">
+                        <button id="calculator_4" class="calculator-button calculator-button-background-color-numbers">4</button>
+                    </div>
+                    <div class="calculator-button-div calculator-button-div-background-color-numbers">
+                        <button id="calculator_5" class="calculator-button calculator-button-background-color-numbers">5</button>
+                    </div>
+                    <div class="calculator-button-div calculator-button-div-background-color-numbers">
+                        <button id="calculator_6" class="calculator-button calculator-button-background-color-numbers">6</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_Multiply" class="calculator-button">&times;</button>
+                    </div>
+                    <div class="calculator-button-div calculator-button-div-background-color-numbers">
+                        <button id="calculator_1" class="calculator-button calculator-button-background-color-numbers">1</button>
+                    </div>
+                    <div class="calculator-button-div calculator-button-div-background-color-numbers">
+                        <button id="calculator_2" class="calculator-button calculator-button-background-color-numbers">2</button>
+                    </div>
+                    <div class="calculator-button-div calculator-button-div-background-color-numbers">
+                        <button id="calculator_3" class="calculator-button calculator-button-background-color-numbers">3</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_Minus" class="calculator-button">&minus;</button>
+                    </div>
+                    <div class="calculator-button-div calculator-button-div-background-color">
+                        <button id="calculator_solver" class="calculator-button calculator-button-image-solve calculator-button-background-color"></button>
+                    </div>
+                    <div class="calculator-button-div calculator-button-div-background-color-numbers">
+                        <button id="calculator_Dot" class="calculator-button calculator-button-background-color-numbers">.</button>
+                    </div>
+                    <div class="calculator-button-div calculator-button-div-background-color-numbers">
+                        <button id="calculator_0" class="calculator-button calculator-button-background-color-numbers">0</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_Plus" class="calculator-button">+</button>
+                    </div>
+                </div>
+                <div class="grid-calculator-group">
+                    <div class="calculator-button-div calculator-button-div-background-color">
+                        <button id="calculator_backspace" class="calculator-button calculator-button-image-backspace calculator-button-background-color"></button>
+                    </div>
+                    <div class="calculator-button-div calculator-button-div-background-color">
+                        <button id="calculator_leftarrow" class="calculator-button calculator-button-image-leftarrow calculator-button-background-color"></button>
+                    </div>
+                    <div class="calculator-button-div calculator-button-div-background-color">
+                        <button id="calculator_rightarrow" class="calculator-button calculator-button-image-rightarrow calculator-button-background-color"></button>
+                    </div>
+                    <div class="calculator-button-div calculator-button-div-background-color">
+                        <button id="calculator_enter" class="calculator-button calculator-button-image-enter calculator-button-background-color"></button>
+                    </div>
+                    <div class="calculator-button-div calculator-button-div-background-color">
+                        <button id="calculator_clear" class="calculator-button calculator-button-image-clear calculator-button-background-color"></button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_power_of" class="calculator-button">^</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_pi" class="calculator-button">&pi;</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_var_col" class="calculator-button">exp</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_Open_Bracket" class="calculator-button">(</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_Close_Bracket" class="calculator-button">)</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_coma" class="calculator-button">,</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_space" class="calculator-button">&mdash;&mdash;</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_squared" class="calculator-button calculator-button-image-squared"></button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_power" class="calculator-button calculator-button-image-power"></button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_root" class="calculator-button calculator-button-image-root"></button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_root_power" class="calculator-button calculator-button-image-root-power"></button>
+                    </div>
+                </div>
+                <div class="grid-calculator-group-two-row">
+                    <div class="calculator-button-div">
+                        <button id="calculator_fraction" class="calculator-button calculator-button-image-fraction"></button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_fraction_factor" class="calculator-button calculator-button-image-fraction-factor"></button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_euler" class="calculator-button">e</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_e_power" class="calculator-button calculator-button-image-e-power"></button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_ln" class="calculator-button">ln</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_log" class="calculator-button">log</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_log_base" class="calculator-button calculator-button-image-log-base"></button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_e_power_x_1" class="calculator-button">e<sup>x-1</sup></button>
+                    </div>
+                </div>
+                <div class="grid-calculator-group-two-row">
+                    <div class="calculator-button-div">
+                        <button id="calculator_root_n" class="calculator-button calculator-button-size">root x<sup>1/n</sup></button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_round" class="calculator-button">round</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_round_n" class="calculator-button calculator-button-size">round to n</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_sign" class="calculator-button">sign</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_hypot" class="calculator-button calculator-button-size">hypotenuse</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_frac" class="calculator-button calculator-button-size">modulus x</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_trunc" class="calculator-button calculator-button-size">integer x</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_inrange" class="calculator-button calculator-button-size">gcd x</button>
+                    </div>
+                </div>
+                <div id="trigonometryDiv1" class="grid-calculator-group-two-row grid-calculator-group-init">
+                    <div class="calculator-button-div">
+                        <button id="calculator_sin" class="calculator-button">sin</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_cos" class="calculator-button">cos</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_tan" class="calculator-button">tan</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_csc" class="calculator-button">csc</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_sec" class="calculator-button">sec</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_cot" class="calculator-button">cot</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_sinh" class="calculator-button">sinh</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_cosh" class="calculator-button">cosh</button>
+                    </div>
+                </div>
+                <div id="trigonometryDiv2" class="grid-calculator-group-two-row grid-calculator-group-init">
+                    <div class="calculator-button-div">
+                        <button id="calculator_tanh" class="calculator-button">tanh</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_arcsin" class="calculator-button">arcsin</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_arccos" class="calculator-button">arccos</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_arctan" class="calculator-button">arctan</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_deg2rad" class="calculator-button calculator-button-size">deg to rad</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_deg2grad" class="calculator-button calculator-button-size">deg to grad</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_rad2deg" class="calculator-button calculator-button-size">rad to deg</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_grad2deg" class="calculator-button calculator-button-size">grad to deg</button>
+                    </div>
+                </div>
+                <div id="statisticsDiv1" class="grid-calculator-group-two-row grid-calculator-group-init">
+                    <div class="calculator-button-div">
+                        <button id="calculator_sum" class="calculator-button calculator-button-image-sum"></button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_product" class="calculator-button calculator-button-image-product"></button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_max" class="calculator-button">max</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_min" class="calculator-button">min</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_vector" class="calculator-button">variance</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_avg" class="calculator-button">average</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_std" class="calculator-button">std</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_percent" class="calculator-button">%</button>
+                    </div>
+                </div>
+                <div id="statisticsDiv2" class="grid-calculator-group-two-row grid-calculator-group-init">
+                    <div class="calculator-button-div">
+                        <button id="calculator_combination" class="calculator-button calculator-button-image-combination"></button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_permutation" class="calculator-button calculator-button-image-permutation"></button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_floor" class="calculator-button calculator-button-image-floor"></button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_ceiling" class="calculator-button calculator-button-image-ceiling"></button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_factorial" class="calculator-button calculator-button-image-factorial"></button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_absalute" class="calculator-button calculator-button-image-absolute"></button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_binomial" class="calculator-button">gamma</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_variations" class="calculator-button">multinomial</button>
+                    </div>
+                </div>
+                <div id="variablesDiv1" class="grid-calculator-group grid-calculator-group-init">
+                    <div class="calculator-button-div">
+                        <button id="calculator_a" class="calculator-button">a</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_b" class="calculator-button">b</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_c" class="calculator-button">c</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_d" class="calculator-button">d</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_e" class="calculator-button">e</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_f" class="calculator-button">f</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_g" class="calculator-button">g</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_k" class="calculator-button">k</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_m" class="calculator-button">m</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_n" class="calculator-button">n</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_o" class="calculator-button">o</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_p" class="calculator-button">p</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_q" class="calculator-button">q</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_r" class="calculator-button">r</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_u" class="calculator-button">u</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_v" class="calculator-button">v</button>
+                    </div>
+                </div>
+                <div id="variablesDiv2" class="grid-calculator-group grid-calculator-group-init">
+                    <div class="calculator-button-div">
+                        <button id="calculator_w" class="calculator-button">w</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_x" class="calculator-button">x</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_y" class="calculator-button">y</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_z" class="calculator-button">z</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_double_quote" class="calculator-button">"</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_single_quote" class="calculator-button">'</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_forward_slash" class="calculator-button">/</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_back_slash" class="calculator-button">\</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_underscore" class="calculator-button">_</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_tildor" class="calculator-button">`</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_hashtag" class="calculator-button">#</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_dollar" class="calculator-button">$</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_var" class="calculator-button">var</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_i" class="calculator-button">i</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_tau" class="calculator-button calculator-button-image-tau"></button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_theta" class="calculator-button calculator-button-image-theta"></button>
+                    </div>
+                </div>
+                <div id="programmingDiv1" class="grid-calculator-group grid-calculator-group-init">
+                    <div class="calculator-button-div">
+                        <button id="calculator_Open_Curly_Bracket" class="calculator-button">{</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_Close_Curly_Bracket" class="calculator-button">}</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_Open_Square_Bracket" class="calculator-button">[</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_Close_Square_Bracket" class="calculator-button">]</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_equal_equal" class="calculator-button">==</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_not_equal" class="calculator-button">!=</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_assign" class="calculator-button">:=</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_equal" class="calculator-button">=</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_leq" class="calculator-button calculator-button-image-leq"></button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_geq" class="calculator-button calculator-button-image-geq"></button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_lt" class="calculator-button calculator-button-image-lt"></button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_gt" class="calculator-button calculator-button-image-gt"></button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_logical_and" class="calculator-button">&</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_bool_and" class="calculator-button">&&</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_logical_or" class="calculator-button">|</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_bool_or" class="calculator-button">||</button>
+                    </div>
+                </div>
+                <div id="programmingDiv2" class="grid-calculator-group grid-calculator-group-init">
+                    <div class="calculator-button-div">
+                        <button id="calculator_tab" class="calculator-button">tab</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_semicolon" class="calculator-button">;</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_colon" class="calculator-button">:</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_ternary" class="calculator-button">?:</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_if_else" class="calculator-button">cross prod</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_switch" class="calculator-button">dot prod</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_while" class="calculator-button">count</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_for" class="calculator-button">lcm</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_true" class="calculator-button">complex</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_false" class="calculator-button">hexadecimal</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_and" class="calculator-button">and</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_or" class="calculator-button">or</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_nand" class="calculator-button">imaginary</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_nor" class="calculator-button">real</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_not" class="calculator-button">not</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_xor" class="calculator-button">xor</button>
+                    </div>
+                </div>
+                <div id="calculusDiv1" class="grid-calculator-group-one-row grid-calculator-group-init">
+                    <div class="calculator-button-div">
+                        <button id="calculator_integral" class="calculator-button" disabled style="color:gainsboro;">integral</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <!--<button id="calculator_integral_3box" class="calculator-button calculator-button-image-integral-3box"></button>-->
+                        <button id="calculator_integral_3box" class="calculator-button" disabled style="color:gainsboro;">integral</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_derivative_1box" class="calculator-button calculator-button-image-derivative-1box"></button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_derivative_2box" class="calculator-button" disabled style="color:gainsboro;">derivative</button>
+                    </div>
+                </div>
+                <div id="calculusDiv2" class="grid-calculator-group-one-row grid-calculator-group-init">
+                    <div class="calculator-button-div">
+                        <button id="calculator_lim" class="calculator-button" disabled style="color:gainsboro;">limit</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_lim_neg" class="calculator-button" disabled style="color:gainsboro;">limit-</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_lim_pos" class="calculator-button" disabled style="color:gainsboro;">limit+</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_infinity" class="calculator-button calculator-button-image-infinity"></button>
+                    </div>
+                </div>
+                <div id="functionsDiv1" class="grid-calculator-group-one-row-two-column grid-calculator-group-init">
+                    <div class="calculator-button-div">
+                        <button id="calculator_linear_algebra" class="calculator-button calculator-button-two-column-width">linear algebra</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_linear_regression" class="calculator-button calculator-button-two-column-width">linear regression</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_interpolation" class="calculator-button calculator-button-two-column-width">distance</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_cubic_root" class="calculator-button calculator-button-two-column-width">cubic root</button>
+                    </div>
+                </div>
+                <div id="functionsDiv2" class="grid-calculator-group-one-row-two-column grid-calculator-group-init">
+                    <div class="calculator-button-div">
+                        <button id="calculator_equation_root" class="calculator-button calculator-button-two-column-width">equation root</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_quadratic_root" class="calculator-button calculator-button-two-column-width">quadratic root</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_random_number" class="calculator-button calculator-button-two-column-width">random number (n)</button>
+                    </div>
+                    <div class="calculator-button-div">
+                        <button id="calculator_random_point" class="calculator-button calculator-button-two-column-width">random point [x,y]</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy;<a id="companyID" class="text-dark" href="https://www.dznequeo.net/">Nequeo</a>
+        </div>
+    </footer>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/12.2.1/math.js"></script>
+    <script type="text/javascript" src="js/ui.bundle.min.o.js"></script>
+    <script type="text/javascript" src="js/calculator.min.js"></script>
+    <script type="module" src="js/app-main.mjs"></script>
+    <script type="module" src="js/calculator-main.mjs"></script>
+    <script>
+        /* Init the calculator */
+        calculatorInit('calculator', 'InputExpression', 'OutputResult', 'FunctionIndex', 'SectionIndex');
+    </script>
+</body>
+</html>
