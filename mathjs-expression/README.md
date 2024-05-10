@@ -7,3 +7,5 @@ npm install
 
 ## Build
 npm run build 
+
+<a href="https://www.dznequeo.net/awsapi/site/calculator/" target="_blank">MathJS Calculator: Demo</a>
