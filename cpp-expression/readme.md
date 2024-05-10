@@ -28,7 +28,7 @@
 
 #### Calculator Statistics
 
-[![Calculator Statistics](https://nequeo-public.s3.ap-southeast-2.amazonaws.com/mediamath-calculator-statistics.png)](https://www.dznequeo.net/azurecs/home/calculator)
+[![Calculator Statistics](https://nequeo-public.s3.ap-southeast-2.amazonaws.com/media/math-calculator-statistics.png)](https://www.dznequeo.net/azurecs/home/calculator)
 
 
 #### Calculator Trigonometry
