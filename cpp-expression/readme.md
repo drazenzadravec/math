@@ -23,14 +23,14 @@
 
 #### Calculator Functions
 
-[![Calculator Functions](https://nequeo-public.s3.ap-southeast-2.amazonaws.com/media/math-calculator-functions.png)](https://www.dznequeo.net/awscs/calculator)
+[![Calculator Functions](https://nequeo-public.s3.ap-southeast-2.amazonaws.com/media/math-calculator-functions.png)](https://www.dznequeo.net/azurecs/home/calculator)
 
 
 #### Calculator Statistics
 
-[![Calculator Statistics](https://nequeo-public.s3.ap-southeast-2.amazonaws.com/mediamath-calculator-statistics.png)](https://www.dznequeo.net/awscs/calculator)
+[![Calculator Statistics](https://nequeo-public.s3.ap-southeast-2.amazonaws.com/mediamath-calculator-statistics.png)](https://www.dznequeo.net/azurecs/home/calculator)
 
 
 #### Calculator Trigonometry
 
-[![Calculator Trigonometry](https://nequeo-public.s3.ap-southeast-2.amazonaws.com/media/math-calculator-trigonometry.png)](https://www.dznequeo.net/awscs/calculator)
+[![Calculator Trigonometry](https://nequeo-public.s3.ap-southeast-2.amazonaws.com/media/math-calculator-trigonometry.png)](https://www.dznequeo.net/azurecs/home/calculator)
