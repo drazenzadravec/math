@@ -2,20 +2,18 @@
 
 #### Expression Functions
 
-![Alt text](https://nequeo-public.s3.ap-southeast-2.amazonaws.com/media/wolfram-calculator-functions.png "Expression Functions")
+[![Expression Functions](https://nequeo-public.s3.ap-southeast-2.amazonaws.com/media/wolfram-calculator-functions.png)](https://www.dznequeo.net/awscs/mathexpression)
 
 
 #### Expression Statistics
 
-![Alt text](https://nequeo-public.s3.ap-southeast-2.amazonaws.com/media/wolfram-calculator-statistics.png "Expression Statistics")
+[![Expression Statistics](https://nequeo-public.s3.ap-southeast-2.amazonaws.com/media/wolfram-calculator-statistics.png)](https://www.dznequeo.net/awscs/mathexpression)
 
 
 #### Expression Trigonometry
 
-![Alt text](https://nequeo-public.s3.ap-southeast-2.amazonaws.com/media/wolfram-calculator-trigonometry.png "Expression Trigonometry")
+[![Expression Trigonometry](https://nequeo-public.s3.ap-southeast-2.amazonaws.com/media/wolfram-calculator-trigonometry.png)](https://www.dznequeo.net/awscs/mathexpression)
 
 #### Expression Trigonometry Series
 
-![Alt text](https://nequeo-public.s3.ap-southeast-2.amazonaws.com/media/wolfram-calculator-trigonometry-series.png "Expression Trigonometry Series")
-
-[![App Platorm](https://nequeo-public.s3.ap-southeast-2.amazonaws.com/media/wolfram-calculator-trigonometry-series.png)](https://www.digitalocean.com/products/app-platform)
+[![Expression Trigonometry Series](https://nequeo-public.s3.ap-southeast-2.amazonaws.com/media/wolfram-calculator-trigonometry-series.png)](https://www.dznequeo.net/awscs/mathexpression)
