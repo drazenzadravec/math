@@ -4,11 +4,12 @@ A complete implementation of C++ math expression evaluator
 
 <a href="https://www.dznequeo.net/azurecs/home/calculator" target="_blank">Math Calculator: Demo</a>
 
+<a href="https://nequeo-cdn.s3.ap-southeast-2.amazonaws.com/docs/ScientificDocument.htm" target="_blank">Mathematical expression usage docs</a>
+
 ### Usage
 ```
 MathExpression "4^78"
 ```
-<a href="https://nequeo-cdn.s3.ap-southeast-2.amazonaws.com/docs/ScientificDocument.htm" target="_blank">Mathematical expression usage docs</a>
 
 ### Builds
 
