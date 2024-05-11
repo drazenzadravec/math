@@ -14,6 +14,10 @@ Math tools with C++ and Javascript expression evaluator with C# and Java Wolfram
 
 [![Calculator Functions](https://nequeo-public.s3.ap-southeast-2.amazonaws.com/media/math-calculator-functions.png)](https://www.dznequeo.net/azurecs/home/calculator)
 
-#### Javascript MathJS Expression - Calculator Functions
+#### Javascript Math Expression - Calculator Functions
 
 [![Calculator Functions](https://nequeo-public.s3.ap-southeast-2.amazonaws.com/media/mathjs-calculator-functions.png)](https://www.dznequeo.net/awsapi/site/calculator/)
+
+#### Wolfram Math Expression Functions
+
+[![Expression Functions](https://nequeo-public.s3.ap-southeast-2.amazonaws.com/media/wolfram-calculator-functions.png)](https://www.dznequeo.net/awscs/mathexpression)
