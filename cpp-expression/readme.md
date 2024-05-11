@@ -8,6 +8,7 @@ A complete implementation of C++ math expression evaluator
 ```
 MathExpression "4^78"
 ```
+<a href="https://nequeo-cdn.s3.ap-southeast-2.amazonaws.com/docs/ScientificDocument.htm" target="_blank">Mathematical expression usage docs</a>
 
 ### Builds
 
