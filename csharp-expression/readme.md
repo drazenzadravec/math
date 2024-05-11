@@ -4,7 +4,7 @@ C# math expression evaluator
 
 
 ### Usage
-```
+```c#
 using Nequeo.Math;
 
 Nequeo.Math.MathGenerics<string> exp = new Nequeo.Math.MathGenerics<string>();
