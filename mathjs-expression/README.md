@@ -6,6 +6,8 @@ A complete implementation of Javascript mathjs math expression evaluator
 
 <a href="https://www.dznequeo.net/awsapi/site/calculator/expression" target="_blank">MathJS Expression: Demo</a>
 
+<a href="https://mathjs.org/docs/reference/functions.html" target="_blank">Mathematical expression usage docs</a>
+
 ## Install
 npm install
 
