@@ -7,4 +7,6 @@ The official documentation including use instructions can be found here:
 
 https://wolframresearch.github.io/LibraryLinkUtilities/
 
+https://github.com/WolframResearch/LibraryLinkUtilities/
+
 This documentation is split into modules. Each describes a core part of LLU providing general overview, examples and detailed description of related C++ entities.
