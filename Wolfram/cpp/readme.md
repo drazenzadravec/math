@@ -1,1 +1,1 @@
-C++ console app that can evaluate expresion by using Wolfram Engine
+C++ console app that can evaluate expressions by using Wolfram Engine
