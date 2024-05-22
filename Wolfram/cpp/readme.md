@@ -1,4 +1,4 @@
-C++ console app that can evaluate expressions by using Wolfram Engine
+C++ console app that can evaluate expressions by using the Wolfram Engine
 
 ### Usage
 ```cpp
