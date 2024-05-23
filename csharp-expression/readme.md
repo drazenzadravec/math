@@ -39,3 +39,12 @@ double standardDeviation = exp.Expression<Double>(
     "                                    " +
     " sqrt(sum([x - avg(x)]^2) / x[])    ");
 ```
+
+### Result
+```cpp
+result = -0.76020547948559836
+result1 = 2404.3415926535895
+result2 = 9425573.4288132936
+mean = 13
+standardDeviation = 7.2111025509279782
+```
