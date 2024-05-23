@@ -3,7 +3,7 @@
 
 ### Math Expression
 
-A complete implementation of Wolfram math expression evaluator
+A complete implementation of Wolfram math expression evaluator, by using the Wolfram Engine
 
 <a href="https://reference.wolfram.com/language/" target="_blank">Wolfram Language & System</a>
 
