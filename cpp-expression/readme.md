@@ -7,12 +7,12 @@ A complete implementation of C++ math expression evaluator
 <a href="https://nequeo-cdn.s3.ap-southeast-2.amazonaws.com/docs/ScientificDocument.htm" target="_blank">Mathematical expression usage docs</a>
 
 ### Usage
-```
+```cpp
 .\MathExpression.exe "var x:= 4^78; var y:= 5*7; x*y"
 ```
 
 ### Result
-```
+```cpp
 3.1970348316613501336e+48
 ```
 
