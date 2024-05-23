@@ -7,10 +7,6 @@ C++ console app that can evaluate expressions by using the Wolfram Engine
 
 ### Result
 ```cpp
-
-In[1]:=
-Out[1]=
-
      3    5      7       9        11          13             15
     x    x      x       x        x           x              x              16
 x - -- + --- - ---- + ------ - -------- + ---------- - ------------- + O[x]
@@ -26,9 +22,5 @@ x - -- + --- - ---- + ------ - -------- + ---------- - ------------- + O[x]
 
 ### Result
 ```cpp
-
-In[1]:=
-Out[1]=
-
 {2, 5}
 ```
