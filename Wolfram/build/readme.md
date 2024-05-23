@@ -7,10 +7,6 @@ Extract the zip, binaries included
 
 ### Result
 ```cpp
-
-In[1]:=
-Out[1]=
-
 5764545
 -------
    8
