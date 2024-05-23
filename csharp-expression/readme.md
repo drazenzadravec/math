@@ -5,7 +5,7 @@ C# math expression evaluator
 <a href="https://nequeo-cdn.s3.ap-southeast-2.amazonaws.com/docs/ScientificDocument.htm" target="_blank">Mathematical expression usage docs</a>
 
 ### Usage
-```c#
+```csharp
 using Nequeo.Math;
 
 Nequeo.Math.MathGenerics<string> exp = new Nequeo.Math.MathGenerics<string>();
