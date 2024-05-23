@@ -8,7 +8,12 @@ A complete implementation of C++ math expression evaluator
 
 ### Usage
 ```
-MathExpression "4^78"
+MathExpression "var x:= 4^78; var y:= 5*7; x*y"
+```
+
+### Result
+```
+3.1970348316613501336e+48
 ```
 
 ### Builds
