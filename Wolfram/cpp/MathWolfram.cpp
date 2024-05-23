@@ -87,7 +87,7 @@ int main(int argc, char* argv[])
 			// new line
 			resultStream << "placeholder" << std::endl;
 
-			// if return the exit
+			// if return then exit
 			if (head == "ReturnTextPacket")
 			{
 				// new line
