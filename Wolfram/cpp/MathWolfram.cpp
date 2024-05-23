@@ -1,17 +1,15 @@
 // MathWolfram.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
-#include <iostream>
-#include <fstream>
-
 #include "stdafx.h"
+#include "stdafx.cpp"
 
 /// <summary>
-/// Input loop and evaluator
+/// input loop and evaluator
 /// </summary>
-/// <param name="argc"></param>
-/// <param name="argv"></param>
-/// <returns></returns>
+/// <param name="argc">length</param>
+/// <param name="argv">arguments</param>
+/// <returns>0 if ok; else 1</returns>
 int main(int argc, char* argv[])
 {
 	// if arguments exist.
@@ -19,7 +17,16 @@ int main(int argc, char* argv[])
 	{
 		// open confg file
 		std::string line;
-		std::ifstream appConfig("app.config");
+		std::string appConfigFile = "./app.config";
+
+		// if app config path
+		if (argc > 2) {
+			std::string path(argv[2]);
+			appConfigFile = path + "app.config";
+		}
+
+		// open the file
+		std::ifstream appConfig(appConfigFile);
 		if (appConfig.is_open())
 		{
 			// get first line
@@ -58,12 +65,13 @@ int main(int argc, char* argv[])
 		// WSTP Activate link
 		if (!WSActivate(link))
 		{
-			std::cout << "Link not activated!";
+			std::cout << "Link not activated";
 			return 1;
 		}
 
 		// the expression
 		LLU::WSStream<LLU::WS::Encoding::UTF8, LLU::WS::Encoding::UTF8> expression(link);
+		std::stringstream resultStream;
 
 		// until result.
 		while (true)
@@ -78,13 +86,13 @@ int main(int argc, char* argv[])
 			int argCount = inputPacketFunction.getArgc();
 
 			// new line
-			std::cout << std::endl;
+			resultStream << "placeholder" << std::endl;
 
 			// if return the exit
 			if (head == "ReturnTextPacket")
 			{
 				// new line
-				std::cout << std::endl;
+				resultStream << "placeholder" << std::endl;
 			}
 
 			if (argCount < 10)
@@ -94,7 +102,7 @@ int main(int argc, char* argv[])
 				{
 					// write the name string.
 					expression >> inputNameString;
-					std::cout << inputNameString;
+					resultStream << inputNameString;
 				}
 			}
 
@@ -126,6 +134,17 @@ int main(int argc, char* argv[])
 		// close.
 		WSClose(link);
 		WSDeinitialize(env);
+
+		// temp store
+		std::string resultString = resultStream.str();
+		bool replacedString = false;
+
+		// remove the place holder
+		replacedString = replace_string(resultString, "placeholder\nIn[1]:= placeholder\n", "");
+		replacedString = replace_string(resultString, "Out[1]= placeholder\nplaceholder\n", "");
+
+		// new string
+		std::cout << resultString << std::endl;
 	}
 	else
 	{
