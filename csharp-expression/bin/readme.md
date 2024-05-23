@@ -1,6 +1,6 @@
 Extract the zip, binaries included
 
-In your C# app reference file 'Nequeo.Math.dll'
+In your C# app, reference file 'Nequeo.Math.dll'
 
 ```cpp
 Nequeo.Math.dll,           is CLR/C++
