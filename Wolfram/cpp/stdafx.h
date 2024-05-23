@@ -30,5 +30,9 @@
 
 #include <functional>
 
+#include <iostream>
+#include <fstream>
+#include <sstream>
+
 #include "wstp.h"
 #include <LLU/LLU.h>
