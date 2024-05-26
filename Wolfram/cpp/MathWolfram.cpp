@@ -38,6 +38,21 @@ int main(int argc, char* argv[])
 			return 1;
 		}
 
+		// check if math link file exits
+		std::ifstream mathlinkFile(line.c_str());
+
+		// If file exists.
+		if (!mathlinkFile.good())
+		{
+			std::cout << "Unable to open math link file";
+			return 1;
+		}
+		else
+		{
+			// Close the file stream.
+			mathlinkFile.close();
+		}
+
 		// create the command
 		std::string commandLine = "-linkmode launch -linkname \"" + line + "\"";
 
@@ -130,20 +145,30 @@ int main(int argc, char* argv[])
 			}
 		}
 
+		// exit wolfram
+		WSPutFunction(link, "Exit", 0);
+		if (WSError(link)) 
+		{
+			// write the error
+			std::cout << WSErrorMessage(link) << std::endl;
+		}
+		else
+		{
+			// temp store
+			std::string resultString = resultStream.str();
+			bool replacedString = false;
+
+			// remove the place holder
+			replacedString = replace_string(resultString, "placeholder\nIn[1]:= placeholder\n", "");
+			replacedString = replace_string(resultString, "Out[1]= placeholder\nplaceholder\n", "");
+
+			// new string
+			std::cout << resultString << std::endl;
+		}
+
 		// close.
 		WSClose(link);
 		WSDeinitialize(env);
-
-		// temp store
-		std::string resultString = resultStream.str();
-		bool replacedString = false;
-
-		// remove the place holder
-		replacedString = replace_string(resultString, "placeholder\nIn[1]:= placeholder\n", "");
-		replacedString = replace_string(resultString, "Out[1]= placeholder\nplaceholder\n", "");
-
-		// new string
-		std::cout << resultString << std::endl;
 	}
 	else
 	{
