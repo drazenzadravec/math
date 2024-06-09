@@ -17,6 +17,8 @@ int main(int argc, char* argv[])
 		// open confg file
 		std::string line;
 		std::string appConfigFile = "./app.config";
+		int loopMax = 2000;
+		int loopCount = 0;
 
 		// if app config path
 		if (argc > 2) {
@@ -88,8 +90,11 @@ int main(int argc, char* argv[])
 		std::stringstream resultStream;
 
 		// until result.
-		while (true)
+		while (loopCount <= loopMax)
 		{
+			// count loop
+			loopCount = loopCount + 1;
+			
 			// get input name
 			std::string inputNameString;
 			LLU::WS::Function inputPacketFunction;
@@ -154,16 +159,24 @@ int main(int argc, char* argv[])
 		}
 		else
 		{
-			// temp store
-			std::string resultString = resultStream.str();
-			bool replacedString = false;
+			// too many loops some error
+			if (loopCount >= loopMax)
+			{
+				std::cout << "$Failed with loop error" << std::endl;
+			}
+			else
+			{
+				// temp store
+				std::string resultString = resultStream.str();
+				bool replacedString = false;
 
-			// remove the place holder
-			replacedString = replace_string(resultString, "placeholder\nIn[1]:= placeholder\n", "");
-			replacedString = replace_string(resultString, "Out[1]= placeholder\nplaceholder\n", "");
+				// remove the place holder
+				replacedString = replace_string(resultString, "placeholder\nIn[1]:= placeholder\n", "");
+				replacedString = replace_string(resultString, "Out[1]= placeholder\nplaceholder\n", "");
 
-			// new string
-			std::cout << resultString << std::endl;
+				// new string
+				std::cout << resultString << std::endl;
+			}
 		}
 
 		// close.
