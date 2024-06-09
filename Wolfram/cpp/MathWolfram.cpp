@@ -174,6 +174,15 @@ int main(int argc, char* argv[])
 				replacedString = replace_string(resultString, "placeholder\nIn[1]:= placeholder\n", "");
 				replacedString = replace_string(resultString, "Out[1]= placeholder\nplaceholder\n", "");
 
+				// all others
+				for (size_t i = 0; i <= (loopCount * 2); i++)
+				{
+					std::string one("Out[");
+					std::string two(std::to_string(i));
+					std::string three("]= placeholder\nplaceholder\n");
+					replace_string(resultString, one + two + three, "");
+				}
+				
 				// new string
 				std::cout << resultString << std::endl;
 			}
