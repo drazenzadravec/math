@@ -1,17 +1,17 @@
 #pragma once
 
-#include <windows.h>
-
 #include <math.h>
 #include <cctype>
 #include <cmath>
 #include <cfloat>
 
+#include <cstdio>
 #include <stdio.h>
 #include <time.h>
 #include <ctime>
 #include <stdlib.h>
 #include <cstdlib>
+#include <unistd.h>
 
 #include <string>
 #include <vector>
@@ -36,3 +36,5 @@
 
 #include "wstp.h"
 #include <LLU/LLU.h>
+
+#define PATH_MAX 256
